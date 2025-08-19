@@ -56,20 +56,11 @@ Widget _buildMessageContent(BuildContext context, MessageModel msg) {
     case "image":
       return ClipRRect(
         borderRadius: BorderRadius.circular(10.r),
-        child: Image.network(
-          msg.content.trim(),
+        child: Image.asset(
+          msg.content,
           width: 200.w,
           height: 200.h,
           fit: BoxFit.cover,
-          loadingBuilder: (context, child, loadingProgress) {
-            if (loadingProgress == null) return child;
-            return Container(
-              width: 200.w,
-              height: 200.h,
-              color: AppColors.lightGrey,
-              child: const Center(child: CircularProgressIndicator()),
-            );
-          },
           errorBuilder: (_, __, ___) => Container(
             width: 200.w,
             height: 200.h,

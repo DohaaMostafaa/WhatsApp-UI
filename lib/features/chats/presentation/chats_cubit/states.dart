@@ -4,14 +4,17 @@ abstract class ChatsState {}
 
 class ChatInitial extends ChatsState {}
 class ItemTappedState extends ChatsState {}
+
 class ChatsLoaded extends ChatsState {
   final List<ChatModel> chats;
   final List<ChatModel> filteredChats;
-  final int selectedTab;
+  final int selectedIndex;
+  final String searchQuery;
 
   ChatsLoaded({
     required this.chats,
     required this.filteredChats,
-    required this.selectedTab,
+    required this.selectedIndex,
+    this.searchQuery = '',
   });
 }

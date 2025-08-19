@@ -31,7 +31,11 @@ class _ChatsView extends StatelessWidget {
       appBar: _buildAppBar(),
       body: Column(
         children: [
-          buildSearchBar(),
+          BuildSearchBar(
+            onSearch: (query) {
+              context.read<ChatsCubit>().searchChats(query);
+            },
+          ),
           BlocBuilder<ChatsCubit, ChatsState>(
             builder: (context, state) {
               final cubit = ChatsCubit.get(context);

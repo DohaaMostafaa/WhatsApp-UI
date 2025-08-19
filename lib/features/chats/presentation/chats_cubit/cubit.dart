@@ -16,8 +16,12 @@ class ChatsCubit extends Cubit<ChatsState> {
   }
   void loadChats() {
     final allChats = repository.getChats();
-    emit(ChatsLoaded(chats: allChats, filteredChats: allChats, selectedTab: 0));
-  }
+    emit(ChatsLoaded(
+      chats: allChats,
+      filteredChats: allChats,
+      selectedIndex: 0,
+      searchQuery: '',
+    ));  }
 
   void selectTab(int tabIndex) {
     selectedIndex = tabIndex;
@@ -38,11 +42,31 @@ class ChatsCubit extends Cubit<ChatsState> {
       default:
         filtered = allChats;
     }
+    emit(ChatsLoaded(
+      chats: allChats,
+      filteredChats: filtered,
+      selectedIndex:tabIndex ,
+      searchQuery: ''
+    ));
+  }
+
+  void searchChats(String query) {
+    if (query.isEmpty) {
+      selectTab(selectedIndex);
+      return;
+    }
+
+    final allChats = (state as ChatsLoaded).chats;
+    final filtered = allChats.where((chat) {
+      return chat.name.toLowerCase().contains(query.toLowerCase()) ||
+          chat.message.toLowerCase().contains(query.toLowerCase());
+    }).toList();
 
     emit(ChatsLoaded(
       chats: allChats,
       filteredChats: filtered,
-      selectedTab: tabIndex,
+      selectedIndex: selectedIndex,
+      searchQuery: query,
     ));
   }
 }
