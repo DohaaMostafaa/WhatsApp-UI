@@ -70,7 +70,6 @@ class _ChatsView extends StatelessWidget {
       ),
       elevation: 0,
       actions: [
-        // Theme Toggle
         BlocBuilder<ThemeCubit, ThemeState>(
           builder: (context, state) {
             final cubit = ThemeCubit.get(context);

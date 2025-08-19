@@ -27,12 +27,9 @@ class AppColors {
   static const Color textSecondaryLight = Color(0xFF757575);
   static const Color textSecondaryDark = Color(0xFF8696A0);
 
-  // Divider
   static const Color dividerLight = Color(0xFFE0E0E0);
   static const Color dividerDark = Color(0xFF373737);
 
   static const Color circleLight = Color(0xFF25D366);
-
-  // Dark Mode
   static const Color circleDark = Color(0xFF0B1014);
 }

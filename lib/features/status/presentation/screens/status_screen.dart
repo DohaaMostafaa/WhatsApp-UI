@@ -152,7 +152,7 @@ class UpdatesScreen extends StatelessWidget {
 
             ),
 
-          SizedBox(height: 70.h), // space for bottom nav
+          SizedBox(height: 70.h),
         ],
       ),
     );

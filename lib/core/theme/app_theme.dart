@@ -13,7 +13,7 @@ class AppTheme {
       elevation: 0,
       titleTextStyle: TextStyle(
         color: AppColors.accent,
-        fontSize: 20.sp, // responsive font
+        fontSize: 20.sp,
         fontWeight: FontWeight.w600,
       ),
       iconTheme: const IconThemeData(color: Colors.black),
@@ -51,7 +51,7 @@ class AppTheme {
       fillColor: Colors.grey[100],
       filled: true,
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(25.r), // responsive radius
+        borderRadius: BorderRadius.circular(25.r),
         borderSide: BorderSide.none,
       ),
       hintStyle: TextStyle(color: Colors.grey[600], fontSize: 14.sp),

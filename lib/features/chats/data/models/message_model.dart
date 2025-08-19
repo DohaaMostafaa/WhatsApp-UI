@@ -1,5 +1,5 @@
 class MessageModel {
-  final String type; // text, image, audio
+  final String type;
   final String content;
   final String time;
   final bool isMe;

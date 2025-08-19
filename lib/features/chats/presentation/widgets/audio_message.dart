@@ -12,7 +12,6 @@ Widget buildAudioMessage(BuildContext context, MessageModel msg) {
   return Row(
     mainAxisSize: MainAxisSize.min,
     children: [
-      // Play Button
       Container(
         width: 30.w,
         height: 30.w,
@@ -24,7 +23,6 @@ Widget buildAudioMessage(BuildContext context, MessageModel msg) {
       ),
       SizedBox(width: 10.w),
 
-      // Waveform (5 bars)
       SizedBox(
         width: 100.w,
         height: 20.h,
@@ -46,7 +44,6 @@ Widget buildAudioMessage(BuildContext context, MessageModel msg) {
       ),
       SizedBox(width: 8.w),
 
-      // Duration
       Text(
         msg.content,
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
