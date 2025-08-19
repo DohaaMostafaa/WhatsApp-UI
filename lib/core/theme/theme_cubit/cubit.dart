@@ -26,8 +26,7 @@ class ThemeCubit extends Cubit<ThemeState> {
       currentMode = ThemeMode.light;
       await prefs.setBool('isDark', false);
     }
-    print('aaaaaaaaaaaaaaaaaa');
-    print(currentMode);
+
     emit(ThemeChanged(currentMode));
   }
 }
